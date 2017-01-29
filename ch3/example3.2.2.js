@@ -1,3 +1,4 @@
+// 例题3.2.2，括号匹配的检验
 function parentheses(str) {
 	let arr = str.split('');
 	let result = [];
