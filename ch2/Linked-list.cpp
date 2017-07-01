@@ -8,14 +8,11 @@ struct node {
 int main() {
 	struct node *head, *p, *q, *t;
 	int i, n, a;
-	printf("输入多少个数:"); 
-	scanf("%d", &n); // 有多少个数
-	head = NULL; // 最开始head为null，便于分配第一个节点 
+	scanf("%d", &n);
+	head = NULL;
 	for(i=1;i<=n;i++) {
-		printf("输入第%d个节点的值:", i);
 		scanf("%d", &a);
-		printf("\n");
-		p = (struct node *)malloc(sizeof(struct node)); // 分配node 结构体大小的内存
+		p = (struct node *)malloc(sizeof(struct node));
 		p->data = a;
 		p->next = NULL;
 		if(head == NULL) {

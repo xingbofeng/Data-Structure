@@ -1,4 +1,2 @@
 # Data-Structure
-:frog:春招加油！
-### 环境
-**node v7.1**
+主要还是用`C`/`C++`/`Python`，尽量少使用`JavaScript`
