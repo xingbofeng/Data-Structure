@@ -1,3 +1,6 @@
+/**
+ * 链表相关操作
+ */
 #include <stdio.h>
 #include <stdlib.h>
 struct node {
@@ -138,6 +141,12 @@ bool removeNode(struct node *headNode, int index) {
 	return true;
 }
 
+/**
+ * 合并链表
+ * @param  list1 链表一的头指针
+ * @param  list2 链表二的头指针
+ * @return       新链表的头指针
+ */
 struct node *mergeLists(struct node *list1, struct node *list2) {
 	struct node *currentNode = list1, *preNode;
 	while (currentNode != NULL) {
