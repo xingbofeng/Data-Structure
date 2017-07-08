@@ -1,5 +1,5 @@
 /**
- * 队列相关操作
+ * 队列相关操作：顺序表实现静态队列：浪费大量空间
  */
 #include <stdio.h>
 #include <stdlib.h>
