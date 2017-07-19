@@ -13,15 +13,15 @@ typedef struct {
 
 /**
  * 初始化字符串
- * @param  n [description]
- * @return   [description]
+ * @param  n
+ * @return 指向字符串的指针
  */
 Pstr init(int n) {
   Pstr pstr = (Pstr)malloc(sizeof(Pstr));
   if (!pstr) {
     cout << "为串分配内存失败" << endl;
   }
-  char* pch = (char*)malloc(sizeof(char*));
+  char* pch = (char*)malloc(n * sizeof(char));
   if (pch) {
     pstr->pch = pch;
     pstr->length = 0;
@@ -33,7 +33,35 @@ Pstr init(int n) {
   return pstr;
 }
 
+/**
+ * 把src字符串的值赋值给dest，如果dest非空，则先释放其内存
+ * @param  dest 目标字符串
+ * @param  src  源字符串
+ * @return      赋值后的新字符串
+ */
+Pstr assign(Pstr dest, Pstr src) {
+  int n = src->length;
+  dest->length = n;
+  // 先释放源串内存
+  if (dest->pch) {
+    free(dest->pch);
+  }
+  dest->pch = (char*)malloc((n + 1) * sizeof(char));
+  if (!dest->pch) {
+    cout << "分配空间失败" << endl;
+    exit(0);
+  }
+  int i;
+  for (i = 0; i < n; ++i) {
+    dest->pch[i] = src->pch[i];
+  }
+  dest->pch[i] = '\0';
+  return dest;
+}
+
 int main() {
-  init(0);
+  Pstr string1 = init(3);
+  string1->pch = "123";
+  cout << string1->pch << endl;
   return 0;
 }
